@@ -31,6 +31,14 @@ return [
         'attribute'=>'price',
     ],
     [
+        'label'=>'Total',
+        'value'=> function($model)
+        			{
+        				$total_price = $model->price * $model->quantity;
+        				return $total_price;
+        			},
+    ],
+    [
         'class' => 'kartik\grid\ActionColumn',
         'dropdown' => false,
         'vAlign'=>'middle',

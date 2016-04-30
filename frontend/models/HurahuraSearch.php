@@ -5,10 +5,10 @@ namespace frontend\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\models\Hurahura;
+use frontend\models\Hurahura;
 
 /**
- * HurahuraSearch represents the model behind the search form about `app\models\Hurahura`.
+ * HurahuraSearch represents the model behind the search form about `frontend\models\Hurahura`.
  */
 class HurahuraSearch extends Hurahura
 {

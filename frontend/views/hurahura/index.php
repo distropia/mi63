@@ -7,7 +7,7 @@ use johnitvn\ajaxcrud\CrudAsset;
 use johnitvn\ajaxcrud\BulkButtonWidget;
 
 /* @var $this yii\web\View */
-/* @var $searchModel app\models\HurahuraSearch */
+/* @var $searchModel frontend\models\HurahuraSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = 'Hurahuras';

@@ -3,7 +3,7 @@
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\Hurahura */
+/* @var $model frontend\models\Hurahura */
 ?>
 <div class="hurahura-update">
 

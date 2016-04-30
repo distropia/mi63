@@ -3,7 +3,7 @@
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\Hurahura */
+/* @var $model frontend\models\Hurahura */
 ?>
 <div class="hurahura-view">
  
