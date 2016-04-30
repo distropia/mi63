@@ -10,10 +10,6 @@ return [
         'class' => 'kartik\grid\SerialColumn',
         'width' => '30px',
     ],
-        [
-        'class'=>'\kartik\grid\DataColumn',
-        'attribute'=>'hurahura_id',
-    ],
     [
         'class'=>'\kartik\grid\DataColumn',
         'attribute'=>'service',
@@ -25,17 +21,18 @@ return [
     [
         'class'=>'\kartik\grid\DataColumn',
         'attribute'=>'quantity',
+        'value'=>function($model) { return number_format($model->quantity); },
     ],
     [
         'class'=>'\kartik\grid\DataColumn',
         'attribute'=>'price',
+        'value'=>function($model) { return number_format($model->price); },
     ],
     [
         'label'=>'Total',
         'value'=> function($model)
-        			{
-        				$total_price = $model->price * $model->quantity;
-        				return $total_price;
+        			{	$total_price = $model->price * $model->quantity;
+        				return number_format($total_price);
         			},
     ],
     [

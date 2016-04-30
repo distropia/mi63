@@ -19,7 +19,7 @@ class HurahuraSearch extends Hurahura
     {
         return [
             [['hurahura_id', 'quantity'], 'integer'],
-            [['service', 'owner'], 'safe'],
+            [['service', 'owner', 'date'], 'safe'],
             [['price'], 'number'],
         ];
     }
@@ -58,6 +58,7 @@ class HurahuraSearch extends Hurahura
 
         $query->andFilterWhere([
             'hurahura_id' => $this->hurahura_id,
+            'date' => $this->date,
             'quantity' => $this->quantity,
             'price' => $this->price,
         ]);

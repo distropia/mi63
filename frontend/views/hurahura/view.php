@@ -13,6 +13,7 @@ use yii\widgets\DetailView;
             'hurahura_id',
             'service',
             'owner',
+            'date',
             'quantity',
             'price',
         ],

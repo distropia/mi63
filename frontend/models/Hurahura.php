@@ -10,6 +10,7 @@ use Yii;
  * @property integer $hurahura_id
  * @property string $service
  * @property string $owner
+ * @property string $date
  * @property integer $quantity
  * @property double $price
  */
@@ -29,7 +30,8 @@ class Hurahura extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['service', 'owner', 'quantity', 'price'], 'required'],
+            [['service', 'owner', 'date', 'quantity', 'price'], 'required'],
+            [['date'], 'safe'],
             [['quantity'], 'integer'],
             [['price'], 'number'],
             [['service'], 'string', 'max' => 50],
@@ -46,6 +48,7 @@ class Hurahura extends \yii\db\ActiveRecord
             'hurahura_id' => 'Hurahura ID',
             'service' => 'Service',
             'owner' => 'Owner',
+            'date' => 'Date',
             'quantity' => 'Quantity',
             'price' => 'Price',
         ];
