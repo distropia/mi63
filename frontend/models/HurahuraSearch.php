@@ -19,7 +19,7 @@ class HurahuraSearch extends Hurahura
     {
         return [
             [['hurahura_id', 'quantity'], 'integer'],
-            [['service', 'owner', 'date'], 'safe'],
+            [['date', 'service', 'owner_id'], 'safe'],
             [['price'], 'number'],
         ];
     }
@@ -56,6 +56,8 @@ class HurahuraSearch extends Hurahura
             return $dataProvider;
         }
 
+		$query->joinWith('owner');
+		
         $query->andFilterWhere([
             'hurahura_id' => $this->hurahura_id,
             'date' => $this->date,
@@ -64,7 +66,7 @@ class HurahuraSearch extends Hurahura
         ]);
 
         $query->andFilterWhere(['like', 'service', $this->service])
-            ->andFilterWhere(['like', 'owner', $this->owner]);
+			->andFilterWhere(['like', 'owner_name', $this->owner_id]);
 
         return $dataProvider;
     }

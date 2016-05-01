@@ -11,9 +11,9 @@ use yii\widgets\DetailView;
         'model' => $model,
         'attributes' => [
             'hurahura_id',
-            'service',
-            'owner',
             'date',
+            'service',
+            'owner_id',
             'quantity',
             'price',
         ],

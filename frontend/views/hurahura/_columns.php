@@ -12,11 +12,19 @@ return [
     ],
     [
         'class'=>'\kartik\grid\DataColumn',
+        'attribute'=>'date',
+        'value'=>function($model) { $dateformat = new DateTime($model->date); 
+        							return date_format($dateformat, 'Y-m-d'); }
+	],
+    [
+        'class'=>'\kartik\grid\DataColumn',
         'attribute'=>'service',
     ],
     [
         'class'=>'\kartik\grid\DataColumn',
-        'attribute'=>'owner',
+        'label'=>'Owner',
+        'attribute'=>'owner_id',
+        'value'=>'owner.owner_name',
     ],
     [
         'class'=>'\kartik\grid\DataColumn',

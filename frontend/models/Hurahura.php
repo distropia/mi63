@@ -8,11 +8,13 @@ use Yii;
  * This is the model class for table "hurahura".
  *
  * @property integer $hurahura_id
- * @property string $service
- * @property string $owner
  * @property string $date
+ * @property string $service
+ * @property integer $owner_id
  * @property integer $quantity
  * @property double $price
+ *
+ * @property MOwner $owner
  */
 class Hurahura extends \yii\db\ActiveRecord
 {
@@ -30,12 +32,11 @@ class Hurahura extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['service', 'owner', 'date', 'quantity', 'price'], 'required'],
+            [['date', 'service', 'owner_id', 'quantity', 'price'], 'required'],
             [['date'], 'safe'],
-            [['quantity'], 'integer'],
+            [['owner_id', 'quantity'], 'integer'],
             [['price'], 'number'],
-            [['service'], 'string', 'max' => 50],
-            [['owner'], 'string', 'max' => 25]
+            [['service'], 'string', 'max' => 50]
         ];
     }
 
@@ -46,11 +47,19 @@ class Hurahura extends \yii\db\ActiveRecord
     {
         return [
             'hurahura_id' => 'Hurahura ID',
-            'service' => 'Service',
-            'owner' => 'Owner',
             'date' => 'Date',
+            'service' => 'Service',
+            'owner_id' => 'Owner ID',
             'quantity' => 'Quantity',
             'price' => 'Price',
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getOwner()
+    {
+        return $this->hasOne(MOwner::className(), ['owner_id' => 'owner_id']);
     }
 }

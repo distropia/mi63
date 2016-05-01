@@ -41,6 +41,7 @@ AppAsset::register($this);
         $menuItems = [
 	        ['label' => 'Home', 'url' => ['/site/index']],
 	        ['label' => 'Hura Hura', 'url' => ['/hurahura']],
+	        ['label' => 'Master Owner', 'url' => ['/mowner']],
 	        ['label' => 'About', 'url' => ['/site/about']],
 	        ['label' => 'Contact', 'url' => ['/site/contact']],
 	        [   'label' => 'Logout (' . Yii::$app->user->identity->username . ')',
